@@ -1,0 +1,7 @@
+docxtpl
+fpdf
+streamlit
+python-docx
+docxtpl
+docxcompose
+pypandoc  # optional PDF conversion
