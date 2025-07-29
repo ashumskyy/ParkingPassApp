@@ -6,7 +6,6 @@ import os
 import re
 import tempfile
 import pypandoc
-from docx2pdf import convert
 
 
 TEMPLATE_DIR = "templates"
@@ -59,7 +58,7 @@ def main():
         additional_fields['TimeEntered'] = st.text_input("BOH Entry Time")
         additional_fields['Deck'] = st.text_input("Deck")
 
-    export_format = st.radio("Export Format", ["DOCX", "PDF"])
+    export_format = st.radio("Export Format", ["DOCX"])
 
     if st.button("Generate"):
         with st.spinner("Creating passes..."):
