@@ -47,6 +47,19 @@ def convert_to_pdf(input_docx, output_pdf):
 def main():
     st.title("🎫 Parking Pass Generator")
 
+    # Initialize session state for login
+    if "authenticated" not in st.session_state:
+        st.session_state.authenticated = False
+
+    if not st.session_state.authenticated:
+        password = st.text_input("Enter Access Key", type="password")
+        if password == "GSDPPass2025!":
+            st.session_state.authenticated = True
+            st.rerun()  # Refresh to hide the password field
+        elif password:
+            st.warning("Access denied. Please enter the correct access key.")
+        return  # Exit app until access is granted
+
     template_type = st.selectbox("Select Pass Type", ["FOH Pass", "BOH Pass", "Load/Unload Pass"])
     event_name = st.text_input("Event Name")
     dates = st.text_input("Dates (e.g. 07/24/2025)")
