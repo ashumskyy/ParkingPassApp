@@ -63,7 +63,7 @@ def main():
     template_type = st.selectbox("Select Pass Type", ["FOH Pass", "BOH Pass", "Load/Unload Pass"])
     event_name = st.text_input("Event Name")
     dates = st.text_input("Dates (e.g. 07/24/2025)")
-    phone = st.text_input("Cell Phone #")
+    #phone = st.text_input("Cell Phone #")
     num_passes = st.number_input("Number of Passes", min_value=1, value=1)
 
     additional_fields = {}
@@ -84,7 +84,7 @@ def main():
             context = {
                 "EventName": event_name,
                 "Dates": dates,
-                "CellPhone": phone,
+                "CellPhone": "____________",
                 **additional_fields
             }
 
