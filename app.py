@@ -60,7 +60,7 @@ def main():
             st.warning("Access denied. Please enter the correct access key.")
         return  # Exit app until access is granted
 
-    template_type = st.selectbox("Select Pass Type", ["FOH Pass", "BOH Pass", "Load/Unload Pass"])
+    template_type = st.selectbox("Select Pass Type", ["FOH Pass", "BOH Pass", "Load/Unload Pass", "Merchandise Pick-Up Pass", "VIP Pass"])
     event_name = st.text_input("Event Name")
     dates = st.text_input("Dates (e.g. 07/24/2025)")
     #phone = st.text_input("Cell Phone #")
@@ -79,6 +79,8 @@ def main():
                 "FOH Pass": "foh_pass_template.docx",
                 "BOH Pass": "boh_pass_template.docx",
                 "Load/Unload Pass": "load_unload_template.docx",
+                "Merchandise Pick-Up Pass": "merch_pass_template.docx",
+                "VIP Pass": "vip_pass_template.docx"
             }
             template_file = os.path.join(TEMPLATE_DIR, template_map[template_type])
             context = {
