@@ -1,7 +1,7 @@
-docxtpl
-fpdf
 streamlit
-python-docx
 docxtpl
+python-docx
 docxcompose
-pypandoc  # optional PDF conversion
+# optional PDF conversion
+pypandoc
+fpdf

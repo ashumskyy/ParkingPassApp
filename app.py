@@ -53,7 +53,7 @@ def main():
 
     if not st.session_state.authenticated:
         password = st.text_input("Enter Access Key", type="password")
-        if password == "GSDPPass2025!":
+        if password == st.secrets["auth"]["access_key"]:
             st.session_state.authenticated = True
             st.rerun()  # Refresh to hide the password field
         elif password:
